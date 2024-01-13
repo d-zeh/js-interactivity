@@ -10,10 +10,21 @@ let addMovie = event => {
     let movieTitle = document.createElement('span')
     movieTitle.textContent = inputField.value
     movie.appendChild(movieTitle)
+    
+    let deleteBtn = document.createElement('button')
+    deleteBtn.textContent = "x"
+    deleteBtn.addEventListener('click', deleteMovie)
+    movie.appendChild(deleteBtn)
+
 
     document.querySelector('ul').appendChild(movie)
-
+    inputField.value = ''
 }
 
  let form = document.querySelector('form')
  form.addEventListener('submit',addMovie)
+
+
+ let deleteMovie = event => {
+    event.target.parentNode.remove();
+ }
