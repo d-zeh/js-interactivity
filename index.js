@@ -39,5 +39,11 @@ let addMovie = event => {
 
  let crossOffMovie = event => {
      event.target.classList.toggle('checked')
-     message.textContent= "Movie Watched"
+
+     if(event.target.classList.contains('checked') === true ){
+        message.textContent= "Movie Watched"
+     } else {
+        message.textContent= "Movie Added Back"
+     }
+     
  }
