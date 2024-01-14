@@ -1,5 +1,7 @@
 console.log('hello world')
 
+let message = document.querySelector('#message')
+
 
 
 let addMovie = event => {
@@ -31,9 +33,11 @@ let addMovie = event => {
 
  let deleteMovie = event => {
     event.target.parentNode.remove();
- }
+    message.textContent= "Movie Deleted"
+ } 
 
 
  let crossOffMovie = event => {
      event.target.classList.toggle('checked')
+     message.textContent= "Movie Watched"
  }
