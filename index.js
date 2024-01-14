@@ -34,7 +34,7 @@ let addMovie = event => {
  let deleteMovie = event => {
     event.target.parentNode.remove();
     revealMessage();
-    message.textContent= "Movie Deleted"
+    message.textContent= `${event.target.parentNode.firstChild.textContent} Deleted`
     
  } 
 
@@ -43,9 +43,9 @@ let addMovie = event => {
      event.target.classList.toggle('checked')
 
      if(event.target.classList.contains('checked') === true ){
-        message.textContent= "Movie Watched"
+        message.textContent= `${event.target.textContent} Watched`
      } else {
-        message.textContent= "Movie Added Back"
+        message.textContent= `${event.target.textContent} Added Back`
      }
 
      revealMessage();
