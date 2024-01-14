@@ -33,7 +33,9 @@ let addMovie = event => {
 
  let deleteMovie = event => {
     event.target.parentNode.remove();
+    revealMessage();
     message.textContent= "Movie Deleted"
+    
  } 
 
 
@@ -45,5 +47,14 @@ let addMovie = event => {
      } else {
         message.textContent= "Movie Added Back"
      }
+
+     revealMessage();
      
+ }
+
+ let revealMessage = () => {
+    message.classList.remove('hide')
+    setTimeout(() => {
+        message.classList.add('hide')
+    }, 1000)
  }
